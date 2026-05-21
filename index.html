@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>My Dream SaaS Platform</title>
@@ -296,6 +297,187 @@ footer {
   padding: 25px;
 }
 
+  /* =========================================================
+   SMALL MOBILE DEVICES (320px - 480px)
+========================================================= */
+@media screen and (max-width: 480px) {
+
+  header {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  nav {
+    width: 100%;
+    right: 0;
+    top: 60px;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  nav a {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .hero {
+    padding: 90px 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .price-box,
+  .testimonial-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price,
+  .testimonial {
+    width: 100%;
+  }
+
+  .contact form {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE DEVICES (481px - 767px)
+========================================================= */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+  header {
+    padding: 14px 20px;
+  }
+
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 70px 30px;
+  }
+
+  .features {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .price-box,
+  .testimonial-box {
+    justify-content: center;
+  }
+
+  .price,
+  .testimonial {
+    width: 90%;
+  }
+}
+
+/* =========================================================
+   TABLETS (768px - 1024px)
+========================================================= */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  header {
+    padding: 16px 30px;
+  }
+
+  .hero {
+    padding: 120px 40px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .section {
+    padding: 80px 40px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .price-box {
+    gap: 20px;
+  }
+
+  .price {
+    width: 300px;
+  }
+
+  .testimonial-box {
+    gap: 20px;
+  }
+}
+
+/* =========================================================
+   DESKTOP (1025px and above)
+========================================================= */
+@media screen and (min-width: 1025px) {
+
+  nav {
+    display: flex !important;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .features {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
   header {
@@ -335,6 +517,7 @@ footer {
 <!-- NAVBAR -->
 <header>
   <div class="logo">MyDream</div>
+  <div class="menu-btn">☰</div>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <nav id="nav">
     <a href="#home">Home</a>
@@ -461,6 +644,13 @@ function toggleFAQ(el) {
   const answer = el.nextElementSibling;
   answer.style.display = answer.style.display === "block" ? "none" : "block";
 }
+
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.querySelector("nav");
+
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
 </script>
 
 </body>
